@@ -1,7 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: lightblue;
 }
 
-.div-2 {
-  background-color: green;
+/* start nav */
+nav {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-side-nav {
+  display: flex;
+  font-size: 24px;
+  list-style: none;
+  align-items: center;
+  height: 100px;
+  flex: 1;
+  gap: 20px;
+  justify-content: center;
+  padding-left: 50px;
+  /* color: darkblue; */
+}
+
+.middle-nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+input {
+  font-size: 20px;
+}
+
+.right-side-nav {
+  display: flex;
+  font-size: 28px;
+  list-style: none; 
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+  padding-right: 20px;
+
+}
+
+.right-side-nav img {
+  height: 50px;
+}
+/* end nav */
+
+.main-section {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  /* background-color: green; */
+}
+
+.main-content {
+  text-align: center;
+  /* background-color: red; */
+}
+
+.main-content h1 {
+  /* background-color: blue; */
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.main-content h2 {
+  /* background-color: blue; */
+  font-size: 28px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: yellow;
+  border: none;
+  border-radius: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
