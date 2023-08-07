@@ -57,10 +57,10 @@ function replaceContent () {
   console.log(legendAr);
   var showImg = document.createElement('img');
   var showName = document.createElement('h1');
-  var showType = document.createElement('h2');
-  var showTac = document.createElement('h2');
-  var showUlt = document.createElement('h2');
-  var showPassive = document.createElement('h2');
+  var showType = document.createElement('h4');
+  var showTac = document.createElement('h4');
+  var showUlt = document.createElement('h4');
+  var showPassive = document.createElement('h4');
 
   showImg.src = selectLegend.image;
   showName.textContent = selectLegend.name;
