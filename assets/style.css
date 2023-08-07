@@ -5,6 +5,7 @@
 
 body {
   background-color: lightblue;
+  min-height: 100vh;
 }
 
 .hide {
@@ -59,10 +60,11 @@ input {
 
 .main-section {
   display: flex;
+  justify-content: center;
   align-items: center;
+  min-height: 82vh;
   margin-top: 20px;
   margin-bottom: 20px;
-  justify-content: center;
 }
 
 .main-content {
@@ -83,7 +85,11 @@ input {
   margin-bottom: 20px;
 }
 .main-content img {
+  display: block;
+  width: 300px;
+  height: auto;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 button {
@@ -105,8 +111,3 @@ button:hover {
   height: 200px;
   width: auto;
 }
-/* 
-#legend-description, #legend-title {
-
-  background-color: red;
-} */
