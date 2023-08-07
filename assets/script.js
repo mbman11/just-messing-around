@@ -1,33 +1,44 @@
 var fetchButton = document.getElementById('generate-button'); 
+var mainContent = document.querySelector('.main-content');
+var legendTitle = document.querySelector('#legend-title');
+var legendDesc = document.querySelector('#legend-description');
+var legendTactical = document.querySelector('#legend-tactical');
+var legendUltimate = document.querySelector('#legend-ultimate');
+var legendPassive = document.querySelector('#legend-passive');
+
+var legendObj = {
+  name: 'Pathfinder',
+  type: 'Movement',
+  tactical: 'Grapple Arm',
+  ultimate: 'Zipline Gun',
+  passive: 'Scan Care Packs'
+};
+
+console.log(legendObj);
 
 
 
 
+function replaceContent () {
+  legendTitle.textContent = legendObj.name;
+  legendDesc.textContent = legendObj.type;
+  legendTactical.textContent = legendObj.tactical;
+  legendUltimate.textContent = legendObj.ultimate;
+  legendPassive.textContent = legendObj.passive;
 
 
-function showMeSumn () {
-    // var fetchButton = document.getElementById('generate-button'); 
-    // var genRandomNumber = Math.random();
-    var contentDiv = document.createElement('div');
+  // mainContent.append(legendObj.name);
+  // mainContent.append(legendObj.type);
+  // mainContent.append(legendObj.tactical);
 
-    contentDiv.setAttribute('class','content-div');
-    contentDiv.querySelector('.content-div');
 
-    contentDiv.innerHTML = '';
-
-    contentDiv.textContent = img;
-    var img = document.createElement('img');
-
-    
-    img.setAttribute('class','legend-pic')
-    img.src = 'https://i1.sndcdn.com/artworks-000584129213-qlm6e5-t500x500.jpg';
-
-    contentDiv.append(img);
-    document.body.append(contentDiv);
+  // mainContent.
+  var pathfinderImg = document.querySelector('#center-img');
+  pathfinderImg.src = 'https://media.contentapi.ea.com/content/dam/apex-legends/common/legends/apex-section-bg-legends-pathfinder-xl.jpg.adapt.320w.jpg';
 
   }
 
-  fetchButton.addEventListener('click', showMeSumn);
+  fetchButton.addEventListener('click', replaceContent);
 
 
 

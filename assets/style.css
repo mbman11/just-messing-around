@@ -59,10 +59,10 @@ input {
 
 .main-section {
   display: flex;
+  align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
   justify-content: center;
-  /* background-color: green; */
 }
 
 .main-content {
@@ -78,7 +78,6 @@ input {
   margin-bottom: 20px;
 }
 .main-content h2 {
-  /* background-color: blue; */
   font-size: 28px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -101,15 +100,13 @@ button:hover {
   background-color: rgb(23, 179, 75);
 }
 
-.content-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: red; */
-  height: 500px;
-}
 
 .legend-pic {
   height: 200px;
   width: auto;
 }
+/* 
+#legend-description, #legend-title {
+
+  background-color: red;
+} */
