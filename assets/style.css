@@ -7,6 +7,9 @@ body {
   background-color: lightblue;
 }
 
+.hide {
+  display: none;
+}
 /* start nav */
 nav {
   background-color: white;
@@ -56,14 +59,17 @@ input {
 
 .main-section {
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   justify-content: center;
   /* background-color: green; */
 }
 
 .main-content {
   text-align: center;
-  /* background-color: red; */
+  background-color: white;
+  padding: 50px;
+  border-radius: 20px;
 }
 
 .main-content h1 {
@@ -77,13 +83,33 @@ input {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.main-content img {
+  border-radius: 10px;
+}
 
 button {
-  background-color: yellow;
+  background-color: rgb(199, 231, 199);
   border: none;
   border-radius: 10px;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+button:hover {
+  background-color: rgb(23, 179, 75);
+}
+
+.content-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  height: 500px;
+}
+
+.legend-pic {
+  height: 200px;
+  width: auto;
 }
