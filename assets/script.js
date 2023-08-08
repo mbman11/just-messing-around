@@ -1,16 +1,14 @@
 var fetchButton = document.getElementById('generate-button'); 
 var mainContent = document.querySelector('.main-content');
-// var legendTitle = document.querySelector('#legend-title');
-// var legendDesc = document.querySelector('#legend-description');
-// var legendTactical = document.querySelector('#legend-tactical');
-// var legendUltimate = document.querySelector('#legend-ultimate');
-// var legendPassive = document.querySelector('#legend-passive');
 
 // var api = "https://api.mozambiquehe.re/maprotation?auth=" + key;
 
 // var key = '80c33bdb5b6fa49fd470a52433400195';
 
 // console.log(api);
+
+var weaponAr = ['Havoc','Flatline','Hemlock', 'R-301', "Nemesis", 'Alternator', 'Prowler','R-99','Volt','CAR','Devotion','L-STAR','Spitfire','Rampage','EVA-8','Mastiff','Peace Keeper','Mozambique','G7 Scout','Triple Take','30-30 Repeater','Charge Rifle','Longbow','Sentinel','Wingman','P2020','RE-45',];
+
 
 var pathfinderObj = {
   name: 'Pathfinder',
@@ -206,6 +204,17 @@ var vantageObj = {
   image: 'https://media.contentapi.ea.com/content/dam/apex-legends/images/2022/07/apex-grid-tile-legends-vantage.png.adapt.crop16x9.png'
 }
 
+var weaponAr = ['Havoc','Flatline','Hemlock', 'R-301', "Nemesis", 'Alternator', 'Prowler','R-99','Volt','CAR','Devotion','L-STAR','Spitfire','Rampage','EVA-8','Mastiff','Peace Keeper','Mozambique','G7 Scout','Triple Take','30-30 Repeater','Charge Rifle','Longbow','Sentinel','Wingman','P2020','RE-45',];
+
+function randomWeapon1() {
+  var randomIndex = Math.floor(Math.random() * weaponAr.length)
+  return weaponAr[randomIndex];
+}
+
+function randomWeapon2() {
+  var randomIndex = Math.floor(Math.random() * weaponAr.length)
+  return weaponAr[randomIndex];
+}
 
 var legendAr = [pathfinderObj, wraithObj, mirageObj, wattsonObj, ashObj, ballisticObj, bangaloreObj, bloodhoundObj,catalystObj,causticObj,cryptoObj,fuseObj,gibbyObj,horizonObj,lifelineObj, lobaObj, maggieObj, newcastleObj, octaneObj, rampartObj, revenantObj, seerObj, valkyrieObj, vantageObj];
 
@@ -216,42 +225,43 @@ function randomLegend () {
 
 
 
-
 function replaceContent () {
   var selectLegend = randomLegend();
-  var legendAr = [pathfinderObj, wraithObj, mirageObj];
-  // console.log(legendAr);
-  var showImg = document.createElement('img');
-  var showName = document.createElement('h1');
-  var showType = document.createElement('h4');
-  var showTac = document.createElement('h4');
-  var showUlt = document.createElement('h4');
-  var showPassive = document.createElement('h4');
+  var selectRandomWeapon1 = randomWeapon1();
+  var selectRandomWeapon2 = randomWeapon2();
 
+  var xIcon = document.createElement('img');
+  xIcon.setAttribute('id',"x-icon")
+  
+  var showImg = document.createElement('img');
+  showImg.setAttribute('class', 'legend-image')
+  var showName = document.createElement('h1');
+  var showWeapon1 = document.createElement('h3');
+  var showWeapon2 = document.createElement('h3');
+
+  xIcon.src = 'https://cdn.icon-icons.com/icons2/2518/PNG/512/x_icon_150997.png'; 
   showImg.src = selectLegend.image;
   showName.textContent = selectLegend.name;
-  showType.textContent = selectLegend.type;
-  showTac.textContent = selectLegend.tactical;
-  showUlt.textContent = selectLegend.ultimate;
-  showPassive.textContent = selectLegend.passive;
+  showWeapon1.textContent = selectRandomWeapon1;
+  showWeapon2.textContent = selectRandomWeapon2;
+
   mainContent.innerHTML = ''; 
 
-
+  mainContent.append(xIcon);
   mainContent.append(showImg);
   mainContent.append(showName);
-  // mainContent.append(showType);
-  // mainContent.append(showTac);
-  // mainContent.append(showUlt);
-  // mainContent.append(showPassive);
+  mainContent.append(showWeapon1);
+  mainContent.append(showWeapon2);
 
 
   mainContent.append(fetchButton);
   }
 
+  function clickX () {
+    console.log('something');
+  }
+
   fetchButton.addEventListener('click', replaceContent);
-
-  console.log(legendAr);
-
 
 
 

@@ -72,33 +72,50 @@ input {
 }
 
 .main-content {
+  display: flex;
+  flex-direction: column;
   width: auto;
   text-align: center;
   background-color: white;
   border: solid 8px rgb(10, 10, 9);
-  padding: 50px;
-  border-radius: px;
+  padding: 20px;
+  padding-bottom: 50px;
+  border-radius: 0px;
+}
+
+#main-title {
+  /* background-color: red; */
+  padding-top: 70px;
+  margin-bottom: 0px;
 }
 
 .main-content h1 {
-  /* background-color: blue; */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
   font-size: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .main-content h2 {
   font-size: 28px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
-.main-content img {
-  display: block;
+
+.main-content h3 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+  font-size: 20px;
+}
+
+.main-content .legend-image {
   width: 300px;
   height: auto;
   border-radius: 10px;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-button {
+.button {
+  width: 200px;
   background-color: red;
   color: white;
   border: none;
@@ -107,7 +124,10 @@ button {
   padding-right: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button:hover {
@@ -115,7 +135,10 @@ button:hover {
 }
 
 
-.legend-pic {
-  height: 200px;
-  width: auto;
+#x-icon {
+  margin-left: auto;
+  /* margin-right: auto; */
+  width: 30px;
+  height: 30px;
 }
+
