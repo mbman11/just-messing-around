@@ -1,15 +1,9 @@
+// Global Variables
 var fetchButton = document.getElementById('generate-button'); 
 var mainContent = document.querySelector('.main-content');
+var  mainBodyContainer = document.querySelector('.main-section');
 
-// var api = "https://api.mozambiquehe.re/maprotation?auth=" + key;
-
-// var key = '80c33bdb5b6fa49fd470a52433400195';
-
-// console.log(api);
-
-var weaponAr = ['Havoc','Flatline','Hemlock', 'R-301', "Nemesis", 'Alternator', 'Prowler','R-99','Volt','CAR','Devotion','L-STAR','Spitfire','Rampage','EVA-8','Mastiff','Peace Keeper','Mozambique','G7 Scout','Triple Take','30-30 Repeater','Charge Rifle','Longbow','Sentinel','Wingman','P2020','RE-45',];
-
-
+// Arrays & Objects
 var pathfinderObj = {
   name: 'Pathfinder',
   type: 'Movement',
@@ -42,7 +36,6 @@ var wattsonObj = {
   passive: 'Auto Heal Shields',
   image: 'https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-wattson.png.adapt.crop16x9.png'
 };
-
 var ashObj = {
   name: 'Ash',
   type: 'Defense',
@@ -202,22 +195,25 @@ var vantageObj = {
   ultimate: 'Sheild Regen',
   passive: 'Auto Heal Shields',
   image: 'https://media.contentapi.ea.com/content/dam/apex-legends/images/2022/07/apex-grid-tile-legends-vantage.png.adapt.crop16x9.png'
-}
+};
 
 var weaponAr = ['Havoc','Flatline','Hemlock', 'R-301', "Nemesis", 'Alternator', 'Prowler','R-99','Volt','CAR','Devotion','L-STAR','Spitfire','Rampage','EVA-8','Mastiff','Peace Keeper','Mozambique','G7 Scout','Triple Take','30-30 Repeater','Charge Rifle','Longbow','Sentinel','Wingman','P2020','RE-45',];
 
+// put each object into legend array
+var legendAr = [pathfinderObj, wraithObj, mirageObj, wattsonObj, ashObj, ballisticObj, bangaloreObj, bloodhoundObj,catalystObj,causticObj,cryptoObj,fuseObj,gibbyObj,horizonObj,lifelineObj, lobaObj, maggieObj, newcastleObj, octaneObj, rampartObj, revenantObj, seerObj, valkyrieObj, vantageObj];
+
+
+// select random weapons 1 & 2 from weaponArray length
 function randomWeapon1() {
   var randomIndex = Math.floor(Math.random() * weaponAr.length)
   return weaponAr[randomIndex];
 }
-
 function randomWeapon2() {
   var randomIndex = Math.floor(Math.random() * weaponAr.length)
   return weaponAr[randomIndex];
 }
 
-var legendAr = [pathfinderObj, wraithObj, mirageObj, wattsonObj, ashObj, ballisticObj, bangaloreObj, bloodhoundObj,catalystObj,causticObj,cryptoObj,fuseObj,gibbyObj,horizonObj,lifelineObj, lobaObj, maggieObj, newcastleObj, octaneObj, rampartObj, revenantObj, seerObj, valkyrieObj, vantageObj];
-
+// select random from legend array which has objects in the array
 function randomLegend () {
   var randomIndex = Math.floor(Math.random() * legendAr.length)
   return legendAr[randomIndex];
@@ -225,107 +221,55 @@ function randomLegend () {
 
 
 
+
+// replace main content within the main-content div
 function replaceContent () {
+  // assign Math.random functions to variables
   var selectLegend = randomLegend();
   var selectRandomWeapon1 = randomWeapon1();
   var selectRandomWeapon2 = randomWeapon2();
 
+  // make elements
+  //x-icon
   var xIcon = document.createElement('img');
   xIcon.setAttribute('id',"x-icon")
+  xIcon.src = 'https://cdn.icon-icons.com/icons2/2518/PNG/512/x_icon_150997.png'; 
   
+  // img
   var showImg = document.createElement('img');
   showImg.setAttribute('class', 'legend-image')
-  var showName = document.createElement('h1');
-  var showWeapon1 = document.createElement('h3');
-  var showWeapon2 = document.createElement('h3');
-
-  xIcon.src = 'https://cdn.icon-icons.com/icons2/2518/PNG/512/x_icon_150997.png'; 
   showImg.src = selectLegend.image;
+
+  // name
+  var showName = document.createElement('h1');
   showName.textContent = selectLegend.name;
+
+  // weapon 1 name
+  var showWeapon1 = document.createElement('h3');
   showWeapon1.textContent = selectRandomWeapon1;
+
+  // weapon 2 name
+  var showWeapon2 = document.createElement('h3');
   showWeapon2.textContent = selectRandomWeapon2;
 
-  mainContent.innerHTML = ''; 
+  // create 2nd container
+  var makeContainer = document.createElement('div')
+  makeContainer.classList.add('main-content');
+  makeContainer.textContent = 'hello';
 
+  // clear  content
+  mainContent.innerHTML = ''; 
+ 
+
+  // append elements
   mainContent.append(xIcon);
   mainContent.append(showImg);
   mainContent.append(showName);
   mainContent.append(showWeapon1);
   mainContent.append(showWeapon2);
-
-
   mainContent.append(fetchButton);
+  mainBodyContainer.append(makeContainer);
   }
 
-  function clickX () {
-    console.log('something');
-  }
-
+  // add click event to button with function on click
   fetchButton.addEventListener('click', replaceContent);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // function replaceContent () {
-  //   legendTitle.textContent = pathfinderObj.name;
-  //   legendDesc.textContent = pathfinderObj.type;
-  //   legendTactical.textContent = pathfinderObj.tactical;
-  //   legendUltimate.textContent = pathfinderObj.ultimate;
-  //   legendPassive.textContent = pathfinderObj.passive;
-  
-  
-  //   // mainContent.append(legendObj.name);
-  //   // mainContent.append(legendObj.type);
-  //   // mainContent.append(legendObj.tactical);
-  
-  
-  //   // mainContent.
-  //   var pathfinderImg = document.querySelector('#center-img');
-  //   pathfinderImg.src = 'https://media.contentapi.ea.com/content/dam/apex-legends/common/legends/apex-section-bg-legends-pathfinder-xl.jpg.adapt.320w.jpg';
-  
-  //   }

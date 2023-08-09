@@ -64,6 +64,7 @@ input {
 
 .main-section {
   display: flex;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   min-height: 82vh;
