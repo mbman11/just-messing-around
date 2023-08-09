@@ -1,7 +1,7 @@
 // Global Variables
 var fetchButton = document.getElementById('generate-button'); 
 var mainContent = document.querySelector('.main-content');
-var  mainBodyContainer = document.querySelector('.main-section');
+var mainBodyContainer = document.querySelector('.main-section');
 
 // Arrays & Objects
 var pathfinderObj = {
@@ -212,14 +212,11 @@ function randomWeapon2() {
   var randomIndex = Math.floor(Math.random() * weaponAr.length)
   return weaponAr[randomIndex];
 }
-
 // select random from legend array which has objects in the array
 function randomLegend () {
   var randomIndex = Math.floor(Math.random() * legendAr.length)
   return legendAr[randomIndex];
 }
-
-
 
 
 // replace main content within the main-content div
@@ -255,11 +252,12 @@ function replaceContent () {
   // create 2nd container
   var makeContainer = document.createElement('div')
   makeContainer.classList.add('main-content');
-  makeContainer.textContent = 'hello';
+  makeContainer.textContent = 'make stuff show up';
+
 
   // clear  content
   mainContent.innerHTML = ''; 
- 
+
 
   // append elements
   mainContent.append(xIcon);
@@ -268,8 +266,9 @@ function replaceContent () {
   mainContent.append(showWeapon1);
   mainContent.append(showWeapon2);
   mainContent.append(fetchButton);
+
   mainBodyContainer.append(makeContainer);
-  }
+  };
 
   // add click event to button with function on click
   fetchButton.addEventListener('click', replaceContent);
